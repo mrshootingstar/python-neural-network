@@ -2,8 +2,23 @@
 import numpy as np 
       
 # Each row is a training example, each column is a feature  [X1, X2, X3]
-X=np.array(([0,0,1],[0,1,1],[1,0,1],[1,1,1]), dtype=float)
-y=np.array(([0],[1],[1],[0]), dtype=float)
+X=np.array(
+    (
+        [0,0,1],
+        [0,1,1],
+        [1,0,1],
+        [1,1,1]
+    )
+, dtype=float)
+
+y=np.array(
+    (
+        [0],
+        [1],
+        [1],
+        [0]
+    )
+, dtype=float)
 
 # Activation function
 def sigmoid(t):
@@ -19,8 +34,8 @@ class NeuralNetwork:
         self.input = x
         self.weights1= np.random.rand(self.input.shape[1],4) # considering we have 4 nodes in the hidden layer
         self.weights2 = np.random.rand(4,1)
-        self.y = y
-        self.output = np. zeros(y.shape)
+        self.y = y                                           # the ground truth (y)
+        self.output = np. zeros(y.shape)                     # the output of the model (y_hat)
         
     def feedforward(self):
         self.layer1 = sigmoid(np.dot(self.input, self.weights1))
@@ -50,3 +65,6 @@ for i in range(1500): # trains the NN 1,000 times
         print ("\n")
   
     NN.train(X, y)
+
+print(NN.weights1)
+print(NN.weights2)

@@ -8,18 +8,18 @@
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
-            "module": "flask",
+            // "module": "flask",
             "env": {
                 "FLASK_APP": "app.py",
                 "FLASK_ENV": "development",
                 "FLASK_DEBUG": "0"
             },
             "args": [
-                "run",
-                "--host","0.0.0.0",
-                "--port","9000",
-                "--no-debugger",
-                "--no-reload"
+                "app.py",
+                // "--host","0.0.0.0",
+                // "--port","9000",
+                // "--no-debugger",
+                // "--no-reload"
             ],
             "jinja": true
         }
